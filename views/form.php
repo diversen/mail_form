@@ -17,7 +17,7 @@ include_once "lib/captcha.php";
 <input type="text" name="captcha" size="30" value="<?=@$_POST['captcha']?>" />
 <br />
 <label for="content"><?=lang::translate('mail_form_content')?></label><br />
-<textarea name="content" cols="60" rows="20" ><?=@$_POST['content']?></textarea>
+<textarea name="content" cols="40" rows="20" ><?=@$_POST['content']?></textarea>
 <label for="submit">&nbsp;</label>
 <br />
 <input type="submit" name="submit" value="<?=lang::translate('mail_form_submit')?>" />
