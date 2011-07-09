@@ -32,7 +32,7 @@ class mailForm {
         $from = get_main_ini('site_email');
         $title = $_POST['title'];
         $content = $_POST['content'];
-        $to = get_module_ini('mail_form_send_to');
+        $to = get_main_ini('site_email');
         $reply_to = $_POST['email'];
         
         $res = mail_utf8(
