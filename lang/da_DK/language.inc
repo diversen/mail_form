@@ -1,6 +1,6 @@
 <?php
 
-// Translation of file /home/dennis/www/mandlen/lib/../modules/mail_form/views/form.php
+// Translation of file /home/dennis/www/mandlen/lib/../modules/mail_form/views/form.inc
 
 $_COS_LANG_MODULE['mail_form'] = 'Udfyld kontakt formularen';
 $_COS_LANG_MODULE['mail_form_title'] = 'Titel';

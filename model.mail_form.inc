@@ -24,7 +24,7 @@ class mailForm {
     }
 
     public static function viewMailForm (){
-        include _COS_PATH . "/modules/mail_form/views/form.php";
+        include _COS_PATH . "/modules/mail_form/views/form.inc";
     }
 
     public static function sendMail (){
