@@ -1,6 +1,6 @@
 <?php
 
-include_once "lib/captcha.php";
+//include_once "lib/captcha.php";
 
 
 
@@ -13,9 +13,12 @@ include_once "lib/captcha.php";
 <label for="email"><?=lang::translate('mail_form_email')?></label><br />
 <input type="text" name="email" size="30" value="<?=@$_POST['email']?>" />
 <br />
-<label for="captcha"><?=captcha::createCaptcha()?></label><br />
-<input type="text" name="captcha" size="30" value="<?=@$_POST['captcha']?>" />
-<br />
+<?php
+
+    echo html::label('captcha', captcha::createCaptcha());
+    echo html::text('captcha', @$_POST['captcha']);
+?>
+
 <label for="content"><?=lang::translate('mail_form_content')?></label><br />
 <textarea name="content" cols="40" rows="20" ><?=@$_POST['content']?></textarea>
 <label for="submit">&nbsp;</label>

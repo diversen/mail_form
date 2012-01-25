@@ -1,7 +1,7 @@
 <?php
 
 
-include_once "lib/captcha.php";
+//include_once "lib/captcha.php";
 
 if (!isset($_SESSION['referer'])){
     $_SESSION['referer'] = $_SERVER['HTTP_REFERER'];

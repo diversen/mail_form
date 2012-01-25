@@ -1,11 +1,13 @@
 <?php
 
+include_once "captcha.php";
+
 class mailForm {
 
     static public $errors = array();
 
     public static function validateMailForm (){
-        $_POST = cos_htmlspecialchars($_POST);
+        $_POST = html::specialEncode($_POST);
         if (@isset($_POST['submit'])){
             
             if (!cosValidate::validateEmailAndDomain($_POST['email'])){
