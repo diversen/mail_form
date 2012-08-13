@@ -4,7 +4,13 @@
 //include_once "lib/captcha.php";
 
 if (!isset($_SESSION['referer'])){
-    $_SESSION['referer'] = $_SERVER['HTTP_REFERER'];
+    $_SESSION['referer'] = @$_SERVER['HTTP_REFERER'];
+}
+
+if (isset($_GET['sent']) && $_GET['sent'] == 'true') {
+    $res = 1;
+} else {
+    $res = null;
 }
 
 if (isset($_POST['submit'])){
@@ -13,16 +19,17 @@ if (isset($_POST['submit'])){
         $res = mailForm::sendMail();
         if ($res){
             session::setActionMessage(lang::translate('mail_form_sent'));
-            if (isset($_SESSION['referer'])){
-                $header = "Location: $_SESSION[referer]";
-                header($header);
-            } else {
-                return;
-            }
+            //if (isset($_SESSION['referer'])){
+            //    http::locationHeader($_SESSION['referer']);
+            //} else {
+                http::locationHeader('/mail_form/index?sent=true');
+            //}
         }
     } else {
         view_form_errors(mailForm::$errors);
     }
 }
 
-mailForm::viewMailForm();
+if (!$res) {
+    mailForm::viewMailForm();
+}

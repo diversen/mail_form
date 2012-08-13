@@ -1,3 +1,4 @@
-;mail_form_send_to = "mail@mandlen.dk"
+mail_form_send_to = "dennis.iversen@gmail.com"
+mail_form_main_menu = 1
 ;[development]
 ;mail_form_send_to = "dennis.iversen@gmail.com"

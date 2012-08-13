@@ -1,26 +1,19 @@
-<?php
-
-//include_once "lib/captcha.php";
-
-
-
-?>
 <form action="" method="post">
 <fieldset><legend><?=lang::translate('mail_form')?></legend>
 <label for="title"><?=lang::translate('mail_form_title')?></label><br />
-<input type="text" name="title" size="30" value="<?=@$_POST['title']?>" />
+<input type="text" name="title" size="<?=HTML_FORM_TEXT_SIZE ?>" value="<?=@$_POST['title']?>" />
 <br />
 <label for="email"><?=lang::translate('mail_form_email')?></label><br />
-<input type="text" name="email" size="30" value="<?=@$_POST['email']?>" />
+<input type="text" name="email" size="<?=HTML_FORM_TEXT_SIZE ?>" value="<?=@$_POST['email']?>" />
 <br />
 <?php
 
-    echo html::label('captcha', captcha::createCaptcha());
-    echo html::text('captcha', @$_POST['captcha']);
+    echo html::labelClean('captcha', captcha::createCaptcha());
+    echo html::textClean('captcha');
 ?>
 
 <label for="content"><?=lang::translate('mail_form_content')?></label><br />
-<textarea name="content" cols="40" rows="20" ><?=@$_POST['content']?></textarea>
+<textarea name="content" cols="<?=HTML_FORM_TEXTAREA_WT ?>" rows="<?=HTML_FORM_TEXTAREA_HT ?>" ><?=@$_POST['content']?></textarea>
 <label for="submit">&nbsp;</label>
 <br />
 <input type="submit" name="submit" value="<?=lang::translate('mail_form_submit')?>" />
