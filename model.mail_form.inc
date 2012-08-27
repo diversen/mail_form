@@ -31,8 +31,9 @@ class mailForm {
     /**
      * display email form 
      */
-    public static function viewMailForm (){
-        include _COS_PATH . "/modules/mail_form/views/form.inc";
+    public static function viewMailForm ($vars = null){
+        
+        echo view::get('mail_form', 'form', $vars);
     }
 
     /**

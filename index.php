@@ -1,7 +1,7 @@
 <?php
 
 
-//include_once "lib/captcha.php";
+http::prg();
 
 if (!isset($_SESSION['referer'])){
     $_SESSION['referer'] = @$_SERVER['HTTP_REFERER'];
@@ -19,17 +19,13 @@ if (isset($_POST['submit'])){
         $res = mailForm::sendMail();
         if ($res){
             session::setActionMessage(lang::translate('mail_form_sent'));
-            //if (isset($_SESSION['referer'])){
-            //    http::locationHeader($_SESSION['referer']);
-            //} else {
-                http::locationHeader('/mail_form/index?sent=true');
-            //}
+            http::locationHeader('/mail_form/index?sent=true');
         }
-    } else {
-        view_form_errors(mailForm::$errors);
     }
 }
 
 if (!$res) {
-    mailForm::viewMailForm();
+    $vars = array ();
+    $vars['errors'] = mailForm::$errors;
+    mailForm::viewMailForm($vars);
 }

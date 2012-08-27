@@ -1,3 +1,10 @@
+<?php
+
+if (isset($vars['errors'])) {
+    view_form_errors($vars['errors']);
+}
+
+?>
 <form action="" method="post">
 <fieldset><legend><?=lang::translate('mail_form')?></legend>
 <label for="title"><?=lang::translate('mail_form_title')?></label><br />
