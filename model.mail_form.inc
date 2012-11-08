@@ -11,7 +11,8 @@ class mailForm {
      */
     public static function validateMailForm (){
         $_POST = html::specialEncode($_POST);
-        if (@isset($_POST['submit'])){
+
+        if (@isset($_POST['mail_form_submit'])){
             
             if (!cosValidate::validateEmailAndDomain($_POST['email'])){
                 self::$errors[] = lang::translate('mail_form_error_email');
@@ -22,18 +23,12 @@ class mailForm {
             if (@empty($_POST['content'])){
                 self::$errors[] = lang::translate('mail_form_error_content');
             }
-            if (!captcha::checkCaptcha($_POST['captcha'])){
-                self::$errors[] = lang::translate('mail_form_error_captcha');
+            if (config::getModuleIni('mail_form_captcha')) {
+                if (!captcha::checkCaptcha($_POST['captcha'])){
+                    self::$errors[] = lang::translate('mail_form_error_captcha');
+                }
             }
         }        
-    }
-
-    /**
-     * display email form 
-     */
-    public static function viewMailForm ($vars = null){
-        
-        echo view::get('mail_form', 'form', $vars);
     }
 
     /**

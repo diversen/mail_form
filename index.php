@@ -13,7 +13,7 @@ if (isset($_GET['sent']) && $_GET['sent'] == 'true') {
     $res = null;
 }
 
-if (isset($_POST['submit'])){
+if (isset($_POST['mail_form_submit'])){
     mailForm::validateMailForm();
     if (empty(mailForm::$errors)){
         $res = mailForm::sendMail();
@@ -27,5 +27,7 @@ if (isset($_POST['submit'])){
 if (!$res) {
     $vars = array ();
     $vars['errors'] = mailForm::$errors;
-    mailForm::viewMailForm($vars);
+    echo view::get('mail_form', 'form', $vars);
+} else {
+    echo view::get('mail_form', 'sent', array ());
 }

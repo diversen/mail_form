@@ -15,15 +15,18 @@ if (isset($vars['errors'])) {
 <br />
 <?php
 
+if (config::getModuleIni('mail_form_captcha')) {
     echo html::labelClean('captcha', captcha::createCaptcha());
     echo html::textClean('captcha');
+}
+
 ?>
 
 <label for="content"><?=lang::translate('mail_form_content')?></label><br />
 <textarea name="content" cols="<?=HTML_FORM_TEXTAREA_WT ?>" rows="<?=HTML_FORM_TEXTAREA_HT ?>" ><?=@$_POST['content']?></textarea>
 <label for="submit">&nbsp;</label>
 <br />
-<input type="submit" name="submit" value="<?=lang::translate('mail_form_submit')?>" />
+<input type="submit" name="mail_form_submit" value="<?=lang::translate('mail_form_submit')?>" />
 <br />
 </fieldset>
 
