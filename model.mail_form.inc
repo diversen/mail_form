@@ -50,7 +50,7 @@ class mailForm {
         }
 
         $reply_to = $_POST['email'];
-        $res = mail_utf8(
+        $res = cosMail::text(
             $to,
             $title,
             $content,
