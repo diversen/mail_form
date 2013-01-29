@@ -54,7 +54,8 @@ class mailForm {
             $to,
             $title,
             $content,
-            $from, $reply_to);
+            $from, 
+            $reply_to);
         return $res;
     }
 }
