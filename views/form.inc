@@ -1,7 +1,7 @@
 <?php
 
 if (isset($vars['errors'])) {
-    view_form_errors($vars['errors']);
+    html::errors($vars['errors']);
 }
 
 ?>
