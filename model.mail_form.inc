@@ -15,17 +15,17 @@ class mailForm {
         if (@isset($_POST['mail_form_submit'])){
             
             if (!cosValidate::validateEmailAndDomain($_POST['email'])){
-                self::$errors[] = lang::translate('mail_form_error_email');
+                self::$errors[] = lang::translate('Not a correct email');
             }
             if (@empty($_POST['title'])){
-                self::$errors[] = lang::translate('mail_form_error_title');
+                self::$errors[] = lang::translate('Enter title');
             }
             if (@empty($_POST['content'])){
-                self::$errors[] = lang::translate('mail_form_error_content');
+                self::$errors[] = lang::translate('Enter content');
             }
             if (config::getModuleIni('mail_form_captcha')) {
                 if (!captcha::checkCaptcha($_POST['captcha'])){
-                    self::$errors[] = lang::translate('mail_form_error_captcha');
+                    self::$errors[] = lang::translate('Not a correct calculation of captcha');
                 }
             }
         }        

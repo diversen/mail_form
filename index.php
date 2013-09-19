@@ -18,7 +18,7 @@ if (isset($_POST['mail_form_submit'])){
     if (empty(mailForm::$errors)){
         $res = mailForm::sendMail();
         if ($res){
-            session::setActionMessage(lang::translate('mail_form_sent'));
+            session::setActionMessage(lang::translate('Fill out the contact form'));
             http::locationHeader('/mail_form/index?sent=true');
         }
     }
