@@ -1,11 +1,11 @@
 <?php
 
-$_COS_LANG_MODULE['Fill out the contact form'] = 'Your form has been sent';
-$_COS_LANG_MODULE['Not a correct email'] = 'Not a correct email';
-$_COS_LANG_MODULE['Enter title'] = 'Enter title';
-$_COS_LANG_MODULE['Enter content'] = 'Enter content';
-$_COS_LANG_MODULE['Not a correct calculation of captcha'] = 'Not a correct calculation of captcha';
-$_COS_LANG_MODULE['Title'] = 'Title';
-$_COS_LANG_MODULE['Your email'] = 'Your email';
-$_COS_LANG_MODULE['Enter your message'] = 'Enter your message';
+$_COS_LANG_MODULE['Fill out the contact form'] = 'Ditt formulär har skickats';
+$_COS_LANG_MODULE['Not a correct email'] = 'Inte en korrekt e-postadress';
+$_COS_LANG_MODULE['Enter title'] = 'Skriv in titel';
+$_COS_LANG_MODULE['Enter content'] = 'Ange innehåll';
+$_COS_LANG_MODULE['Not a correct calculation of captcha'] = 'Inte en korrekt beräkning av captcha';
+$_COS_LANG_MODULE['Title'] = 'Titel';
+$_COS_LANG_MODULE['Your email'] = 'Din e-post';
+$_COS_LANG_MODULE['Enter your message'] = 'Innehåll';
 $_COS_LANG_MODULE['Submit'] = 'Submit';
