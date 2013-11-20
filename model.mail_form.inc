@@ -37,16 +37,16 @@ class mailForm {
      */
     public static function sendMail (){
 
-        $from = get_main_ini('site_email');
+        $from = config::getMainIni('site_email');
 
         $title = $_POST['title'];
         $content = $_POST['content'];
-        $to = get_main_ini('site_email');
+        $to = config::getMainIni('site_email');
         
         if (config::getModuleIni('mail_form_send_to')) {
             $to = config::getModuleIni('mail_form_send_to');
         } else {
-            $to = get_main_ini('site_email');
+            $to = config::getMainIni('site_email');
         }
 
         $reply_to = $_POST['email'];
